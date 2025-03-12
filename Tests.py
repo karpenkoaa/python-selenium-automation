@@ -11,8 +11,9 @@ driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
 driver.get('https://www.target.com/')
-sleep(3)
-driver.find_element(By. XPATH, "//a[@class='sc-a6f64ae6-1 sc-a6f64ae6-3 fKSfey erxjnr h-margin-l-wide']").click()
+sleep(4)
+
+driver.find_element(By. XPATH, "//a[@class='sc-614114e5-1 sc-55744c41-0 kqKupI jPsZQE' and @aria-label='cart 0 items']").click()
 sleep(2)
-driver.find_element(By. XPATH, "//span[@class='styles_wrapper__YYaWP' and text()='Home']").click()
-driver.find_element(By. XPATH, "//*[text()='Furniture']")
+driver.find_element(By. XPATH, "//h1[text()='Your cart is empty']")
+sleep(2)
