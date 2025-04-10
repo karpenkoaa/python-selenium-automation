@@ -10,6 +10,7 @@ driver_path = ChromeDriverManager().install()
 # create a new Chrome browser instance
 service = Service(driver_path)
 driver = webdriver.Chrome(service=service)
+driver.implicitly_wait(4)
 driver.maximize_window()
 
 # open the url
@@ -21,11 +22,12 @@ search.clear()
 search.send_keys('Table')
 
 # wait for 4 sec
-sleep(4)
+# sleep(4)
 
 # click search button
 driver.find_element(By.NAME, 'btnK').click()
 
+# sleep(5)
 # verify search results
 assert 'table'.lower() in driver.current_url.lower(), f"Expected query not in {driver.current_url.lower()}"
 print('Test Passed')
