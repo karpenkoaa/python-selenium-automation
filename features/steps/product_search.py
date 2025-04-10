@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.support import expected_conditions as EC
 
 SEARCH_INPUT = (By.ID, 'search')
 SEARCH_SUBMIT = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
@@ -17,6 +18,7 @@ def input_search(context, search_word):
 @when('Click on search icon')
 def click_search_icon(context):
     context.driver.find_element(*SEARCH_SUBMIT).click()
+
 
 
 

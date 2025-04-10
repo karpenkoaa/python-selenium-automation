@@ -15,8 +15,11 @@ def verify_search_worked(context, expected_product):
 
 @when('Click Add to cart on the product')
 def click_add_to_cart(context):
+    sleep(3)
+    context.driver.execute_script("window.scrollTo(0, 1500);")
     context.driver.wait.until(EC.element_to_be_clickable(ADD_TO_CART_BTN))
     context.driver.find_element(*ADD_TO_CART_BTN).click()
+
 
 @when ('Confirm Add to Cart button from side navigation')
 def confirm_add_to_cart(context):
@@ -25,7 +28,6 @@ def confirm_add_to_cart(context):
 
 @when('Store product name')
 def store_product_name(context):
-    context.driver.wait.until(EC.visibility_of_element_located(SIDE_NAV_PRODUCT_NAME))
     context.product_name = context.driver.find_element(*SIDE_NAV_PRODUCT_NAME).text
     print('Product name stored: ', context.product_name)
 

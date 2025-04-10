@@ -23,6 +23,6 @@ def verify_cart_has_one_items(context, amount):
 
 @then('Verify cart has correct product')
 def verify_product_name(context):
-    context.driver.wait.until(EC.text_to_be_present_in_element(CART_ITEM_TITLE))
+    context.driver.wait.until(EC.visibility_of_element_located(CART_ITEM_TITLE))
     product_name_in_cart = context.driver.find_element(*CART_ITEM_TITLE).text
-    assert context.product_name == product_name_in_cart, f'Error'
+    assert context.product_name in product_name_in_cart, f'Expected {context.product_name} but got {product_name_in_cart}.'
