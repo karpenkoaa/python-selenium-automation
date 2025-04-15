@@ -15,7 +15,7 @@ def open_target_main(context):
 
 @when('Click Sign In')
 def click_sign_in(context):
-    context.driver.find_element(By.CSS_SELECTOR, "#account-sign-in").click()
+    context.app.headers.click_sign_in()
     sleep(2)
 
 @when('Click on Cart icon')
@@ -23,8 +23,8 @@ def click_cart_icon(context):
     context.app.main_page.click_cart_btn()
     sleep(2)
 
-@when('Search for {product}')
-def search_for_product(context, product):
+@when('Search for {expected_text}')
+def search_for_product(context, expected_text):
     context.app.headers.search()
 
 @when('Click view cart')

@@ -5,6 +5,7 @@ Feature: Target 'Your cart is empty' message is shown
     Given Open target main page
     When Click on Cart icon
     Then Verify correct message is shown
+    And Verify cart page opens
 
   Scenario: Product is added to the cart
     Given Open target main page

@@ -14,10 +14,9 @@ def input_search(context, search_word):
     search.clear()
     search.send_keys(search_word)
 
-
 @when('Click on search icon')
 def click_search_icon(context):
-    context.driver.find_element(*SEARCH_SUBMIT).click()
+    context.app.main_page.click_search_btn()
 
 
 

@@ -5,3 +5,4 @@ Feature: Target search
     Given Open target main page
     When Search for tea
     Then Verify search worked for tea
+    And Verify tea in URL
