@@ -3,6 +3,13 @@ from pages.base_page import Page
 
 class SignInPage(Page):
     SIGN_IN_PAGE_TEXT = (By. XPATH, "//h1[text()='Sign in or create account']")
+    TC_LINK = (By.XPATH, "//a[text()='Target terms and conditions']")
 
     def verify_sign_in(self):
         self.verify_text('Sign in or create account', *self.SIGN_IN_PAGE_TEXT)
+
+    def click_tc_link(self):
+        self.click(*self.TC_LINK)
+
+    def verify_tc_opened(self):
+        self.verify_partial_url('target.com/c/terms-conditions')
