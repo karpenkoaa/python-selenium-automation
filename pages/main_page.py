@@ -7,8 +7,9 @@ class MainPage(Page):
    SEARCH_SUBMIT = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
 
    def open_main_page(self):
-       self.open_url('https://www.target.com/')
-       self.wait_until_visible(*self.SEARCH_INPUT)
+       self.open_url('https://target.com/')
+       # self.wait_until_visible(*self.SEARCH_INPUT)
+
 
    def click_cart_btn(self):
        self.click(*self.CART_BUTTON)
