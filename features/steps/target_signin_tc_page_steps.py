@@ -3,21 +3,17 @@ from behave import given, when, then
 from time import sleep
 from selenium.webdriver.support import expected_conditions as EC
 
-USER_NAME_FIELD = (By.ID, 'username')
-CONTINUE_BTN = (By.ID, 'login')
+
 SIGN_IN_BTN = (By.CSS_SELECTOR, "#account-sign-in")
 SIGN_IN_BTN_NAV = (By.XPATH, "//button[@data-test='accountNav-signIn']")
+
 
 @given('Open sign in page')
 def open_sign_in_page(context):
     context.app.main_page.open_main_page()
     context.app.base_page.wait_until_clickable(*SIGN_IN_BTN)
     context.app.base_page.wait_until_clickable(*SIGN_IN_BTN_NAV)
-    context.app.base_page.wait_until_visible(*USER_NAME_FIELD)
-    context.app.base_page.input_text('karpenkoalina1295@gmail.com', *USER_NAME_FIELD)
-    sleep(2)
-    context.app.base_page.click(*CONTINUE_BTN)
-    sleep(3)
+
 
 @when('Store original window')
 def store_original_window(context):
@@ -43,3 +39,4 @@ def close_new_window(context):
 @then('Switch back to original window')
 def switch_to_back_to_original_window(context):
     context.app.base_page.switch_to_window_by_id(context.original_window)
+

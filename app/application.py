@@ -4,6 +4,7 @@ from pages.cart_page import CartPage
 from pages.headers import Headers
 from pages.search_results_page import SearchResults
 from pages.sign_in_page import SignInPage
+from pages.help_page import HelpPage
 
 class Application:
     def __init__ (self, driver):
@@ -14,4 +15,5 @@ class Application:
         self.headers = Headers(driver)
         self.search_results_page = SearchResults(driver)
         self.sign_in_page = SignInPage(driver)
+        self.help_page = HelpPage(driver)
 

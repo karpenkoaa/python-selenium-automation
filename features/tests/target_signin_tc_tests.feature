@@ -9,3 +9,5 @@ Feature: Terms and Conditions window
  Then Verify Terms and Conditions page is opened
  And Close new window
  And Switch back to original window
+
+
